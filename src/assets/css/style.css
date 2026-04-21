@@ -1,0 +1,340 @@
+@font-face {
+  font-family: "Shorai Sans StdN Var";
+  src: url("/assets/fonts/Shorai Sans/ShoraiSansStdNVar.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: #0e0e0e;
+  color: #f7f4e2;
+  font-family: "Shorai Sans StdN Var", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.home {
+  position: relative;
+  width: 1440px;
+  height: 2788px;
+  margin: 0 auto;
+  background: #0e0e0e;
+  overflow: hidden;
+}
+
+/* ---------- Navbar ---------- */
+.home__navbar {
+  position: absolute;
+  top: 24px;
+  left: 89px;
+  width: 1305px;
+  height: 72px;
+}
+
+.home__navbar-menu-en {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 32px;
+  color: #f7f4e2;
+  font-weight: 400;
+}
+
+.home__navbar-menu-jp {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  font-size: 64px;
+  color: #00e5d4;
+  font-weight: 400;
+}
+
+.home__navbar-logo {
+  position: absolute;
+  top: 0;
+  left: 624px;
+  width: 66px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.home__navbar-book-jp {
+  position: absolute;
+  top: -18px;
+  left: 1068px;
+  font-size: 64px;
+  color: #9a184d;
+  font-weight: 400;
+}
+
+.home__navbar-book-en {
+  position: absolute;
+  top: 0;
+  left: 1223px;
+  font-size: 32px;
+  color: #f7f4e2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ---------- Hero ---------- */
+.home__hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 810px;
+}
+
+.home__hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 810px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.home__hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 810px;
+  background: rgba(210, 50, 50, 0.35);
+  opacity: 0.25;
+}
+
+.home__hero-frame {
+  position: absolute;
+  top: 96px;
+  left: 89px;
+  width: 1303px;
+  height: 684px;
+  border: 5px solid #ff1f7a;
+  border-radius: 80px;
+  background: rgba(217, 217, 217, 0);
+}
+
+.home__hero-title-en {
+  position: absolute;
+  top: 270px;
+  left: 621px;
+  font-size: 32px;
+  color: #f7f4e2;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.home__hero-title-jp {
+  position: absolute;
+  top: 315px;
+  left: 432px;
+  font-size: 128px;
+  color: #00e5d4;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+/* ---------- Small plates heading ---------- */
+.home__section-title {
+  position: absolute;
+  top: 832px;
+  left: 139px;
+  white-space: nowrap;
+  line-height: normal;
+}
+
+.home__section-title-jp {
+  position: absolute;
+  top: 832px;
+  left: 139px;
+  font-size: 250px;
+  color: #6a1937;
+  font-weight: 900;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.home__section-title-en {
+  position: absolute;
+  top: 904px;
+  left: 298px;
+  font-size: 128px;
+  color: #f0f0f0;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+/* ---------- Menu side nav ---------- */
+.home__menu-nav {
+  position: absolute;
+  top: 1238px;
+  left: 62px;
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+  color: #00e5d4;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.home__menu-nav p {
+  margin: 0;
+}
+
+/* ---------- Dish photo ---------- */
+.home__dish {
+  position: absolute;
+  top: 1238px;
+  left: 298px;
+  width: 1043.707px;
+  height: 794.536px;
+}
+
+.home__dish-image-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 59.21%;
+  height: 53.24%;
+  border-radius: 80px;
+  overflow: hidden;
+}
+
+.home__dish-image {
+  position: absolute;
+  top: 0.12%;
+  left: -14.15%;
+  width: 121.03%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.home__dish-kanji {
+  position: absolute;
+  top: 55%;
+  left: 19.26%;
+  transform: rotate(-13.14deg);
+  transform-origin: left top;
+  font-size: 200px;
+  color: #ff1f7a;
+  font-weight: 800;
+  opacity: 0.58;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ---------- Description ---------- */
+.home__description {
+  position: absolute;
+  top: 1243px;
+  left: 968px;
+  width: 464px;
+  height: 354px;
+  color: #00e5d4;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: normal;
+  white-space: pre-wrap;
+}
+
+.home__description p {
+  margin: 0 0 1em 0;
+}
+
+.home__description .home__description-name {
+  font-weight: 900;
+  color: #00e5d4;
+}
+
+/* ---------- Footer ---------- */
+.home__footer {
+  position: absolute;
+  top: 2102px;
+  left: 0;
+  width: 1440px;
+  height: 686px;
+  background: #0e0e0e;
+  overflow: hidden;
+}
+
+.home__footer-contact {
+  position: absolute;
+  top: 119px;
+  left: 450px;
+  display: flex;
+  gap: 115px;
+  color: #f7f4e2;
+  font-size: 24px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.home__footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.home__footer-col-heading {
+  margin: 0 0 50px 0;
+}
+
+.home__footer-col-body {
+  margin: 0;
+}
+
+.home__footer-col-body + .home__footer-col-body {
+  margin-top: 21px;
+}
+
+.home__footer-col-body p {
+  margin: 0;
+}
+
+.home__footer-logo-wrap {
+  position: absolute;
+  top: 321px;
+  left: 18px;
+  width: 1440px;
+  height: 319px;
+}
+
+.home__footer-logo {
+  position: absolute;
+  top: -169px;
+  left: 28px;
+  width: 309px;
+  height: 338px;
+  object-fit: cover;
+}
+
+.home__footer-brand-jp {
+  position: absolute;
+  top: 70px;
+  left: 411px;
+  font-size: 128px;
+  color: #f7f4e2;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.home__footer-brand-en {
+  position: absolute;
+  top: 137px;
+  left: 1140px;
+  font-size: 32px;
+  color: #f7f4e2;
+  font-weight: 400;
+  white-space: nowrap;
+}
