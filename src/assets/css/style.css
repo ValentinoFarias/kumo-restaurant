@@ -6,7 +6,34 @@
   font-display: swap;
 }
 
-* {
+
+/* =============================================================================
+   CSS CUSTOM PROPERTIES / DESIGN TOKENS
+   Global variables: colors, typography.
+   ============================================================================= */
+
+:root {
+  --color-bg:        #0e0e0e;
+  --color-cream:     #f7f4e2;
+  --color-off-white: #f0f0f0;
+  --color-teal:      #00e5d4;
+  --color-pink:      #ff1f7a;
+  --color-yellow:    #f6e640;
+  --color-red:       #e63946;
+
+  --font-primary: "Shorai Sans StdN Var", "Helvetica Neue", Arial, sans-serif;
+  --font-numeric: "Inter", Arial, sans-serif;
+}
+
+
+/* =============================================================================
+   BASE / GLOBAL RESET
+   html, body, and bare element resets.
+   ============================================================================= */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -14,23 +41,30 @@
 
 html,
 body {
-  background: #0e0e0e;
-  color: #f7f4e2;
-  font-family: "Shorai Sans StdN Var", "Helvetica Neue", Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-cream);
+  font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+/* =============================================================================
+   HOME PAGE  (HomePage.jsx)
+   Styles for the main landing page.
+   ============================================================================= */
 
 .home {
   position: relative;
   width: 1440px;
   height: 2788px;
   margin: 0 auto;
-  background: #0e0e0e;
+  background: var(--color-bg);
   overflow: hidden;
 }
 
 /* ---------- Navbar ---------- */
+
 .home__navbar {
   position: absolute;
   top: 24px;
@@ -41,11 +75,12 @@ body {
 
 .home__navbar-menu-en {
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
   font-size: 32px;
-  color: #f7f4e2;
+  color: var(--color-cream);
   font-weight: 400;
+  z-index: 1;
 }
 
 .home__navbar-menu-jp {
@@ -53,7 +88,7 @@ body {
   top: -22px;
   left: 0;
   font-size: 64px;
-  color: #00e5d4;
+  color: var(--color-teal);
   font-weight: 400;
 }
 
@@ -80,12 +115,13 @@ body {
   top: 0;
   left: 1223px;
   font-size: 32px;
-  color: #f7f4e2;
+  color: var(--color-cream);
   text-decoration: none;
   cursor: pointer;
 }
 
 /* ---------- Hero ---------- */
+
 .home__hero {
   position: absolute;
   top: 0;
@@ -120,9 +156,15 @@ body {
   left: 89px;
   width: 1303px;
   height: 684px;
-  border: 5px solid #ff1f7a;
+  border: 5px solid var(--color-pink);
   border-radius: 80px;
   background: rgba(217, 217, 217, 0);
+  box-shadow:
+    0 0 8px var(--color-pink),
+    0 0 20px var(--color-pink),
+    0 0 50px var(--color-pink),
+    0 0 100px var(--color-pink),
+    inset 0 0 20px rgba(255, 31, 122, 0.15);
 }
 
 .home__hero-title-en {
@@ -130,7 +172,7 @@ body {
   top: 270px;
   left: 621px;
   font-size: 32px;
-  color: #f7f4e2;
+  color: var(--color-cream);
   font-weight: 400;
   white-space: nowrap;
 }
@@ -140,12 +182,13 @@ body {
   top: 315px;
   left: 432px;
   font-size: 128px;
-  color: #00e5d4;
+  color: var(--color-teal);
   font-weight: 900;
   white-space: nowrap;
 }
 
 /* ---------- Small plates heading ---------- */
+
 .home__section-title {
   position: absolute;
   top: 832px;
@@ -170,12 +213,13 @@ body {
   top: 904px;
   left: 298px;
   font-size: 128px;
-  color: #f0f0f0;
+  color: var(--color-off-white);
   font-weight: 900;
   white-space: nowrap;
 }
 
 /* ---------- Menu side nav ---------- */
+
 .home__menu-nav {
   position: absolute;
   top: 1238px;
@@ -183,7 +227,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 88px;
-  color: #00e5d4;
+  color: var(--color-teal);
   font-size: 24px;
   font-weight: 800;
 }
@@ -193,6 +237,7 @@ body {
 }
 
 /* ---------- Dish photo ---------- */
+
 .home__dish {
   position: absolute;
   top: 1238px;
@@ -228,7 +273,7 @@ body {
   transform: rotate(-13.14deg);
   transform-origin: left top;
   font-size: 200px;
-  color: #ff1f7a;
+  color: var(--color-pink);
   font-weight: 800;
   opacity: 0.58;
   white-space: nowrap;
@@ -236,13 +281,14 @@ body {
 }
 
 /* ---------- Description ---------- */
+
 .home__description {
   position: absolute;
   top: 1243px;
   left: 968px;
   width: 464px;
   height: 354px;
-  color: #00e5d4;
+  color: var(--color-teal);
   font-size: 20px;
   font-weight: 500;
   line-height: normal;
@@ -255,17 +301,18 @@ body {
 
 .home__description .home__description-name {
   font-weight: 900;
-  color: #00e5d4;
+  color: var(--color-teal);
 }
 
 /* ---------- Footer ---------- */
+
 .home__footer {
   position: absolute;
   top: 2102px;
   left: 0;
   width: 1440px;
   height: 686px;
-  background: #0e0e0e;
+  background: var(--color-bg);
   overflow: hidden;
 }
 
@@ -275,7 +322,7 @@ body {
   left: 450px;
   display: flex;
   gap: 115px;
-  color: #f7f4e2;
+  color: var(--color-cream);
   font-size: 24px;
   font-weight: 400;
   white-space: nowrap;
@@ -324,7 +371,7 @@ body {
   top: 70px;
   left: 411px;
   font-size: 128px;
-  color: #f7f4e2;
+  color: var(--color-cream);
   font-weight: 900;
   white-space: nowrap;
 }
@@ -334,25 +381,87 @@ body {
   top: 137px;
   left: 1140px;
   font-size: 32px;
-  color: #f7f4e2;
+  color: var(--color-cream);
   font-weight: 400;
   white-space: nowrap;
 }
 
-/* ============================================================
-   BOOK PAGE
-   ============================================================ */
+
+/* =============================================================================
+   BOOK PAGE  (BookPage.jsx)
+   Styles for the table reservation page.
+   ============================================================================= */
 
 .book {
   position: relative;
   width: 1440px;
   height: 2788px;
   margin: 0 auto;
-  background: #0e0e0e;
+  background: var(--color-bg);
   overflow: hidden;
 }
 
+/* ---------- Navbar ---------- */
+
+.book__navbar {
+  position: absolute;
+  top: 24px;
+  left: 89px;
+  width: 1305px;
+  height: 72px;
+}
+
+.book__navbar-menu-en {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 32px;
+  color: var(--color-cream);
+  font-weight: 400;
+}
+
+.book__navbar-menu-jp {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  font-size: 64px;
+  color: var(--color-yellow);
+  font-weight: 400;
+}
+
+.book__navbar-logo {
+  position: absolute;
+  top: 0;
+  left: 624px;
+  width: 66px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.book__navbar-book-jp {
+  position: absolute;
+  top: -18px;
+  left: 1068px;
+  font-size: 64px;
+  color: var(--color-red);
+  font-weight: 400;
+}
+
+.book__navbar-book-en {
+  position: absolute;
+  top: 0;
+  left: 1223px;
+  font-size: 32px;
+  color: var(--color-cream);
+  font-weight: 400;
+}
+
+.book__navbar-menu-link {
+  display: none;
+}
+
 /* ---------- Hero ---------- */
+
 .book__hero {
   position: absolute;
   top: 0;
@@ -387,7 +496,7 @@ body {
   left: 89px;
   width: 1303px;
   height: 684px;
-  border: 5px solid #e63946;
+  border: 5px solid var(--color-red);
   border-radius: 80px;
 }
 
@@ -396,7 +505,7 @@ body {
   top: 270px;
   left: 621px;
   font-size: 32px;
-  color: #f7f4e2;
+  color: var(--color-cream);
   font-weight: 400;
   white-space: nowrap;
 }
@@ -406,70 +515,13 @@ body {
   top: 315px;
   left: 432px;
   font-size: 128px;
-  color: #f6e640;
+  color: var(--color-yellow);
   font-weight: 900;
   white-space: nowrap;
 }
 
-/* ---------- Navbar ---------- */
-.book__navbar {
-  position: absolute;
-  top: 24px;
-  left: 89px;
-  width: 1305px;
-  height: 72px;
-}
-
-.book__navbar-menu-en {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 32px;
-  color: #f7f4e2;
-  font-weight: 400;
-}
-
-.book__navbar-menu-jp {
-  position: absolute;
-  top: -22px;
-  left: 0;
-  font-size: 64px;
-  color: #f6e640;
-  font-weight: 400;
-}
-
-.book__navbar-logo {
-  position: absolute;
-  top: 0;
-  left: 624px;
-  width: 66px;
-  height: 72px;
-  object-fit: contain;
-}
-
-.book__navbar-book-jp {
-  position: absolute;
-  top: -18px;
-  left: 1068px;
-  font-size: 64px;
-  color: #e63946;
-  font-weight: 400;
-}
-
-.book__navbar-book-en {
-  position: absolute;
-  top: 0;
-  left: 1223px;
-  font-size: 32px;
-  color: #f7f4e2;
-  font-weight: 400;
-}
-
-.book__navbar-menu-link {
-  display: none;
-}
-
 /* ---------- Section heading ---------- */
+
 .book__heading {
   position: absolute;
   top: 889px;
@@ -489,12 +541,13 @@ body {
   top: 15px;
   left: 243px;
   font-size: 128px;
-  color: #f0f0f0;
+  color: var(--color-off-white);
   font-weight: 900;
   white-space: nowrap;
 }
 
 /* ---------- Calendar ---------- */
+
 .book__calendar-wrap {
   position: absolute;
   top: 1356px;
@@ -524,7 +577,7 @@ body {
 }
 
 .book__cal-month {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: var(--font-numeric);
   font-size: 24px;
   font-weight: 900;
   color: #000;
@@ -564,7 +617,7 @@ body {
   justify-content: center;
   width: 64px;
   height: 64px;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: var(--font-numeric);
   font-size: 14px;
   background: none;
   border: none;
@@ -609,13 +662,14 @@ body {
 }
 
 /* ---------- Footer ---------- */
+
 .book__footer {
   position: absolute;
   top: 2102px;
   left: 0;
   width: 1440px;
   height: 686px;
-  background: #0e0e0e;
+  background: var(--color-bg);
   overflow: hidden;
 }
 
@@ -625,7 +679,7 @@ body {
   left: 450px;
   display: flex;
   gap: 115px;
-  color: #f7f4e2;
+  color: var(--color-cream);
   font-size: 24px;
   font-weight: 400;
   white-space: nowrap;
@@ -674,7 +728,7 @@ body {
   top: 70px;
   left: 411px;
   font-size: 128px;
-  color: #f7f4e2;
+  color: var(--color-cream);
   font-weight: 900;
   white-space: nowrap;
 }
@@ -684,7 +738,14 @@ body {
   top: 137px;
   left: 1140px;
   font-size: 32px;
-  color: #f7f4e2;
+  color: var(--color-cream);
   font-weight: 400;
   white-space: nowrap;
 }
+
+
+/* =============================================================================
+   MEDIA QUERIES
+   All breakpoints collected here, smallest → largest.
+   prefers-reduced-motion goes at the end.
+   ============================================================================= */
