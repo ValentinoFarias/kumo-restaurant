@@ -29,7 +29,7 @@ export default function HomePage() {
         <nav className="home__navbar">
           {/* Left group: EN "menu" with JP label overflowing above */}
           <div className="home__navbar-menu">
-            <a className="home__navbar-menu-en" href="#menu">menu</a>
+            <a className="home__navbar-menu-en" href="#menu-header">menu</a>
             <p className="home__navbar-menu-jp">メニュー</p>
           </div>
 
@@ -55,11 +55,11 @@ export default function HomePage() {
 
       <div className="home__canvas-shell">
         <div className="home__canvas">
-          {/* Small plates heading — JP sits underneath, EN overlaid on top.
-              id="menu" is the scroll target for the navbar menu link. */}
-          <div id="menu" className="home__section-title">
-            <p className="home__section-title-jp">お つ ま み</p>
-            <p className="home__section-title-en">small plates</p>
+          {/* Menu header — JP sits underneath, EN overlaid on top.
+              id="menu-header" is the scroll target for the navbar menu link. */}
+          <div id="menu-header" className="home__menu-header">
+            <p className="home__menu-header-jp">お つ ま み</p>
+            <p className="home__menu-header-en">small plates</p>
           </div>
 
           {/* Menu + dish + description — stacked on mobile, grid-positioned on the desktop canvas */}

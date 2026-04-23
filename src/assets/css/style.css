@@ -40,7 +40,7 @@
 }
 
 html {
-  scroll-behavior: smooth; /* animates anchor-link scrolling (e.g. #menu) */
+  scroll-behavior: smooth; /* animates anchor-link scrolling (e.g. #menu-header) */
 }
 
 html,
@@ -247,34 +247,43 @@ body {
   white-space: nowrap;
 }
 
-/* ---------- Small plates heading ---------- */
+/* ---------- Menu header ---------- */
 
-.home__section-title {
+.home__menu-header {
   position: absolute;
   top: 22px;
-  left: 139px;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  transform: translateX(-50%);
+  padding: 0 1.5rem;
   scroll-margin-top: 7rem;
-  white-space: nowrap;
+  text-align: center;
 }
 
-/* Large JP text — normal flow, sets the height of the wrapper */
-.home__section-title-jp {
-  font-size: 150px;
+/* Large JP text sits underneath and stays centered with the EN title. */
+.home__menu-header-jp {
+  grid-area: 1 / 1;
+  margin: 0;
+  align-self: center;
+  justify-self: center;
+  font-size: clamp(6.6rem, 12vw, 11.25rem);
   color: #6a1937;
   font-weight: 900;
   letter-spacing: 0;
   white-space: nowrap;
-  line-height: normal;
+  line-height: 0.9;
 }
 
-/* EN text — absolute within the wrapper, overlaid on top of the JP text.
-   Offsets are the original page values minus the wrapper's position:
-   top: 904 - 832 = 72px  |  left: 298 - 139 = 159px */
-.home__section-title-en {
-  position: absolute;
-  top: 72px;
-  left: 159px;
-  font-size: 100px;
+/* EN text overlays the JP title and stays centered at every width. */
+.home__menu-header-en {
+  grid-area: 1 / 1;
+  margin: 0;
+  align-self: center;
+  justify-self: center;
+  line-height: 1;
+  z-index: 1;
+  font-size: clamp(3.25rem, 6.75vw, 6.25rem);
   color: var(--color-off-white);
   font-weight: 900;
   white-space: nowrap;
@@ -851,24 +860,23 @@ body {
     padding: 1.5rem 0 0;
   }
 
-  /* ---------- Small plates heading ---------- */
-  .home__section-title {
+  /* ---------- Menu header ---------- */
+  .home__menu-header {
     position: relative;
     top: auto;
     left: auto;
     align-self: center;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    transform: none;
+    padding: 0 1rem;
   }
 
-  .home__section-title-jp {
-    font-size: clamp(4rem, 10vw, 9rem);
+  .home__menu-header-jp {
+    font-size: clamp(4rem, 14vw, 8rem);
   }
 
-  .home__section-title-en {
-    top: clamp(2rem, 5vw, 4rem);
-    left: clamp(2rem, 8vw, 8rem);
-    font-size: clamp(2.5rem, 7vw, 6rem);
+  .home__menu-header-en {
+    font-size: clamp(2.35rem, 8vw, 5.5rem);
   }
 
   /* ---------- Menu block: menu nav + dish + description ---------- */
