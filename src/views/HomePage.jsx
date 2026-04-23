@@ -1,3 +1,6 @@
+import HeroVideo from "../components/HeroVideo";
+import NavBar from "../components/NavBar";
+
 /*
  * HomePage — full-viewport hero with a scaled desktop canvas below it.
  *
@@ -13,45 +16,8 @@
 export default function HomePage() {
   return (
     <div className="home">
-      <section className="home__hero">
-        <video
-          className="home__hero-video"
-          src="/assets/video/hero-home.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-        <div className="home__hero-overlay" />
-        <div className="home__hero-frame" />
-
-        {/* Navbar floats over the hero without affecting the video layout. */}
-        <nav className="home__navbar">
-          {/* Left group: EN "menu" with JP label overflowing above */}
-          <div className="home__navbar-menu">
-            <a className="home__navbar-menu-en" href="#menu-header">menu</a>
-            <p className="home__navbar-menu-jp">メニュー</p>
-          </div>
-
-          {/* Center: logo links to /home */}
-          <a className="home__navbar-logo-link" href="/home">
-            <img
-              className="home__navbar-logo"
-              src="/assets/images/logoKumo.png"
-              alt="Kumo Ramen"
-            />
-          </a>
-
-          {/* Right group: EN "book" with JP label overflowing above */}
-          <div className="home__navbar-book">
-            <p className="home__navbar-book-jp">リザーブ</p>
-            <a className="home__navbar-book-en" href="/book">book</a>
-          </div>
-        </nav>
-
-        <p className="home__hero-title-en">kumo ramen</p>
-        <p className="home__hero-title-jp">雲ラーメン</p>
-      </section>
+      <HeroVideo page="home" />
+      <NavBar page="home" />
 
       <div className="home__canvas-shell">
         <div className="home__canvas">

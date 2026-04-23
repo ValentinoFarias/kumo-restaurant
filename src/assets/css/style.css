@@ -291,24 +291,29 @@ body {
 
 /* ---------- Menu block wrapper (menu nav + dish + description) ---------- */
 
-/* display: contents removes the wrapper from the layout tree, so the three
-   children remain positioned absolutely against .home__canvas on desktop.
-   The wrapper re-engages as a flex column on smaller screens. */
+/* Desktop menu section uses a compact grid so the nav, dish, kanji, and
+   description fit comfortably within the visible section. */
 .home__menu-block {
-  display: contents;
+  position: absolute;
+  top: clamp(17rem, 30svh, 21rem);
+  left: 62px;
+  width: calc(100% - 124px);
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr) 22rem;
+  column-gap: clamp(2rem, 3vw, 3.25rem);
+  align-items: start;
 }
 
 /* ---------- Menu side nav ---------- */
 
 .home__menu-nav {
-  position: absolute;
-  top: 428px;
-  left: 62px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 88px;
+  gap: clamp(1.5rem, 2.8vw, 3rem);
+  padding-top: clamp(0.75rem, 1vw, 1.25rem);
   color: var(--color-teal);
-  font-size: 24px;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
   font-weight: 800;
 }
 
@@ -319,28 +324,25 @@ body {
 /* ---------- Dish photo ---------- */
 
 .home__dish {
-  position: absolute;
-  top: 428px;
-  left: 298px;
-  width: 1043.707px;
-  height: 794.536px;
+  position: relative;
+  width: 100%;
+  max-width: 38rem;
+  height: auto;
+  justify-self: center;
 }
 
 .home__dish-image-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 59.21%;
-  height: 53.24%;
-  border-radius: 80px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 618 / 423;
+  border-radius: clamp(2.5rem, 5vw, 5rem);
   overflow: hidden;
 }
 
 .home__dish-image {
   position: absolute;
-  top: 0.12%;
-  left: -14.15%;
-  width: 121.03%;
+  inset: 0;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   pointer-events: none;
@@ -348,11 +350,11 @@ body {
 
 .home__dish-kanji {
   position: absolute;
-  top: 55%;
-  left: 19.26%;
-  transform: rotate(-13.14deg);
-  transform-origin: left top;
-  font-size: 200px;
+  bottom: 0;
+  left: 200;
+  transform: translate(-50%, 20%) rotate(12deg);
+  transform-origin: left bottom;
+  font-size: clamp(8rem, 12vw, 11rem);
   color: var(--color-pink);
   font-weight: 800;
   opacity: 0.58;
@@ -363,15 +365,15 @@ body {
 /* ---------- Description ---------- */
 
 .home__description {
-  position: absolute;
-  top: 433px;
-  left: 968px;
-  width: 464px;
-  height: 354px;
+  position: relative;
+  width: 100%;
+  max-width: 22rem;
+  height: auto;
+  padding-top: clamp(0.75rem, 1vw, 1.25rem);
   color: var(--color-teal);
-  font-size: 20px;
+  font-size: clamp(0.95rem, 0.6vw + 0.55rem, 1.15rem);
   font-weight: 500;
-  line-height: normal;
+  line-height: 1.35;
   white-space: pre-wrap;
 }
 
@@ -389,7 +391,7 @@ body {
 /* Flex column — stacks the contact row and logo row vertically */
 .home__footer {
   position: absolute;
-  top: 1292px;
+  top: 1080px;
   left: 0;
   width: 100%;
   height: 686px;
@@ -882,6 +884,10 @@ body {
   /* ---------- Menu block: menu nav + dish + description ---------- */
   /* Re-engage the wrapper as a flex column so children stack on mobile */
   .home__menu-block {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
@@ -924,9 +930,12 @@ body {
     top: auto;
   }
 
-  /* Rotated kanji is decorative — hide on smaller screens to reduce clutter */
   .home__dish-kanji {
-    display: none;
+    display: block;
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%, 20%) rotate(12deg);
+    font-size: clamp(4.75rem, 14vw, 8rem);
   }
 
   .home__description {

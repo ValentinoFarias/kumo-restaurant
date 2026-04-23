@@ -1,3 +1,6 @@
+import HeroVideo from "../components/HeroVideo";
+import NavBar from "../components/NavBar";
+
 const DAYS = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 
 const WEEKS = [
@@ -14,36 +17,10 @@ export default function BookPage() {
   return (
     <div className="book">
       {/* Hero */}
-      <div className="book__hero">
-        <video
-          className="book__hero-video"
-          src="/assets/video/hero-book.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-        <div className="book__hero-overlay" />
-        <div className="book__hero-frame" />
-        <p className="book__hero-title-en">kumo ramen</p>
-        <p className="book__hero-title-jp">雲ラーメン</p>
-      </div>
+      <HeroVideo page="book" />
 
       {/* Navbar */}
-      <nav className="book__navbar">
-        <p className="book__navbar-menu-en">menu</p>
-        <p className="book__navbar-menu-jp">メニュー</p>
-        <img
-          className="book__navbar-logo"
-          src="/assets/images/logoKumo.png"
-          alt="Kumo Ramen"
-        />
-        <p className="book__navbar-book-jp">リザーブ</p>
-        <p className="book__navbar-book-en">book</p>
-        <a className="book__navbar-menu-link" href="/home">
-          menu
-        </a>
-      </nav>
+      <NavBar page="book" />
 
       {/* Section heading */}
       <div className="book__heading">
