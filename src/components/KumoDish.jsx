@@ -10,6 +10,7 @@ export default function KumoDish({
   description = "A slow-steamed dashi custard poured into lacquered stone cups — scented with yuzu, layered beneath with a single piece of poached crab and a curl of enoki mushroom. Finished tableside with a thread of aged soy and a whisper of smoked bonito oil.",
   outro = "still. quiet. precise.",
   notes = "Served warm. Contains shellfish, egg, fish.",
+  price = "£8",
 }) {
   return (
     <>
@@ -41,6 +42,7 @@ export default function KumoDish({
         <p>{description}</p>
         <p>{outro}</p>
         <p>{notes}</p>
+        <p className="home__dish-price">{price}</p>
       </div>
     </>
   );

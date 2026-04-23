@@ -360,20 +360,33 @@ body {
   max-height: 24rem;
 }
 
-/* Individual plate name */
+/* Individual plate name — rendered as a button, styled as plain text */
 .home__menu-nav-plate {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0.55rem 0 0 0;
   margin: 0;
-  padding-top: 0.55rem;
+  cursor: pointer;
   font-weight: 400;
   font-size: 0.8em;
+  font-family: inherit;
   color: var(--color-cream);
   letter-spacing: 0.04em;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+/* Currently selected plate — glows pink */
+.home__menu-nav-plate--active {
+  color: var(--color-pink);
 }
 
 /* Italic placeholder for categories with no plates yet */
 .home__menu-nav-plate--empty {
   opacity: 0.45;
   font-style: italic;
+  cursor: default;
 }
 
 /* ---------- Dish photo ---------- */
@@ -465,6 +478,12 @@ body {
 .home__description .home__description-name {
   font-weight: 900;
   color: var(--color-teal);
+}
+
+.home__dish-price {
+  color: var(--color-pink);
+  font-weight: 800;
+  font-size: 1.25em;
 }
 
 /* ---------- Footer ---------- */
