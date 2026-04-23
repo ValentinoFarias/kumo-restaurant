@@ -317,8 +317,63 @@ body {
   font-weight: 800;
 }
 
-.home__menu-nav p {
+/* Each category row contains the button + collapsible plate list */
+.home__menu-nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Category label button — inherits nav styles, no browser button chrome */
+.home__menu-nav-btn {
+  background: none;
+  border: none;
+  padding: 0;
   margin: 0;
+  cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+/* Highlight the open category in neon pink */
+.home__menu-nav-btn--open {
+  color: var(--color-pink);
+}
+
+/* Hidden plate list — max-height: 0 collapses it without display:none
+   so the CSS transition still fires */
+.home__menu-nav-plates {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+/* Expanded state — max-height large enough for the longest list */
+.home__menu-nav-plates--open {
+  max-height: 24rem;
+}
+
+/* Individual plate name */
+.home__menu-nav-plate {
+  margin: 0;
+  padding-top: 0.55rem;
+  font-weight: 400;
+  font-size: 0.8em;
+  color: var(--color-cream);
+  letter-spacing: 0.04em;
+}
+
+/* Italic placeholder for categories with no plates yet */
+.home__menu-nav-plate--empty {
+  opacity: 0.45;
+  font-style: italic;
 }
 
 /* ---------- Dish photo ---------- */
@@ -346,6 +401,17 @@ body {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+}
+
+/* Cartoon version sits on top of the real photo, invisible by default */
+.home__dish-image--cartoon {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* Fade cartoon in when the wrapper is hovered */
+.home__dish-image-wrap:hover .home__dish-image--cartoon {
+  opacity: 1;
 }
 
 .home__dish-kanji {

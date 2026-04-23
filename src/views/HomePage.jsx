@@ -1,4 +1,8 @@
+import KumoDish from "../components/KumoDish";
+import KumoFooter from "../components/KumoFooter";
 import HeroVideo from "../components/HeroVideo";
+import KumoMenu from "../components/KumoMenu";
+import MenuHeader from "../components/MenuHeader";
 import NavBar from "../components/NavBar";
 
 /*
@@ -23,88 +27,16 @@ export default function HomePage() {
         <div className="home__canvas">
           {/* Menu header — JP sits underneath, EN overlaid on top.
               id="menu-header" is the scroll target for the navbar menu link. */}
-          <div id="menu-header" className="home__menu-header">
-            <p className="home__menu-header-jp">お つ ま み</p>
-            <p className="home__menu-header-en">small plates</p>
-          </div>
+          <MenuHeader />
 
           {/* Menu + dish + description — stacked on mobile, grid-positioned on the desktop canvas */}
           <div className="home__menu-block">
-            <div className="home__menu-nav">
-              <p>small plates</p>
-              <p>brooths</p>
-              <p>sides</p>
-              <p>deserts</p>
-              <p>drinks</p>
-            </div>
-
-            <div className="home__dish">
-              <div className="home__dish-image-wrap">
-                <img
-                  className="home__dish-image"
-                  src="/assets/images/chawanmushi.png"
-                  alt="Chawanmushi"
-                />
-              </div>
-              <p className="home__dish-kanji">茶碗蒸し</p>
-            </div>
-
-            <div className="home__description">
-              <p>
-                <span className="home__description-name">chawanmushi</span>
-                <span> - Steamed Egg Custard</span>
-              </p>
-              <p>silken and trembling, set just beyond liquid.</p>
-              <p>
-                A slow-steamed dashi custard poured into lacquered stone cups — scented
-                with yuzu, layered beneath with a single piece of poached crab and a curl
-                of enoki mushroom. Finished tableside with a thread of aged soy and a
-                whisper of smoked bonito oil.
-              </p>
-              <p>still. quiet. precise.</p>
-              <p>Served warm. Contains shellfish, egg, fish.</p>
-            </div>
+            <KumoMenu />
+            <KumoDish />
           </div>
 
           {/* Footer — contact columns + big brand row */}
-          <footer className="home__footer">
-            <div className="home__footer-contact">
-              <div className="home__footer-col">
-                <p className="home__footer-col-heading">restaurant</p>
-                <div className="home__footer-col-body">
-                  <p>3 frederick place</p>
-                  <p>bs8 1as</p>
-                  <p>bristol</p>
-                  <p>uk</p>
-                </div>
-              </div>
-              <div className="home__footer-col">
-                <p className="home__footer-col-heading">opening hours</p>
-                <div className="home__footer-col-body">
-                  <p>monday to sunday</p>
-                </div>
-                <div className="home__footer-col-body home__footer-col-body--gap">
-                  <p>11:30-15 &amp; 16-21</p>
-                </div>
-              </div>
-              <div className="home__footer-col">
-                <p className="home__footer-col-heading">contact</p>
-                <div className="home__footer-col-body">
-                  <p>hello@kumoramen.co.uk</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="home__footer-logo-wrap">
-              <img
-                className="home__footer-logo"
-                src="/assets/images/logoKumoFoot.png"
-                alt="Kumo Ramen"
-              />
-              <p className="home__footer-brand-jp">雲ラーメン</p>
-              <p className="home__footer-brand-en">kumo ramen</p>
-            </div>
-          </footer>
+          <KumoFooter />
         </div>
       </div>
     </div>
