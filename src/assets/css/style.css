@@ -414,6 +414,20 @@ body {
   opacity: 1;
 }
 
+/* Kanji turns full-opacity pink + neon glow when the image wrap is hovered.
+   Uses ~ because .home__dish-kanji is a sibling of .home__dish-image-wrap,
+   not a child of it.
+   text-shadow layers: tight core bloom → mid spread → wide ambient halo */
+.home__dish-image-wrap:hover ~ .home__dish-kanji {
+  opacity: 1;
+  color: var(--color-pink);
+  text-shadow:
+    0 0 6px  rgba(255, 31, 122, 1),
+    0 0 18px rgba(255, 31, 122, 0.85),
+    0 0 40px rgba(255, 31, 122, 0.55),
+    0 0 80px rgba(255, 31, 122, 0.25);
+}
+
 .home__dish-kanji {
   position: absolute;
   bottom: 0;
@@ -426,6 +440,7 @@ body {
   opacity: 0.58;
   white-space: nowrap;
   pointer-events: none;
+  transition: opacity 0.35s ease, color 0.35s ease, text-shadow 0.35s ease;
 }
 
 /* ---------- Description ---------- */
