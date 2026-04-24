@@ -456,6 +456,66 @@ body {
   transition: opacity 0.35s ease, color 0.35s ease, text-shadow 0.35s ease;
 }
 
+/* ---------- Coming Soon (ComingSoon.jsx) ---------- */
+
+/* Spans both the dish and description grid columns so it fills the full right side */
+.home__coming-soon {
+  grid-column: 2 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20rem;
+}
+
+/* Teal neon border frame — square corners, soft resting glow */
+.home__coming-soon-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 2vw, 2rem) clamp(2rem, 4vw, 4rem);
+  border: clamp(2px, 0.25vmax, 4px) solid var(--color-teal);
+  background: transparent;
+  transition: box-shadow 0.35s ease;
+  border-radius: 12px;
+  transform: rotate(-6deg) scale(0.7);
+
+  /* Resting glow: tight edge → soft ambient → faint inset depth */
+  box-shadow:
+    0 0 6px  rgba(0, 229, 212, 0.7),
+    0 0 18px rgba(0, 229, 212, 0.25),
+    inset 0 0 6px rgba(0, 229, 212, 0.08);
+}
+
+/* Hover: full neon bloom — same intensity pattern as the text hover */
+.home__coming-soon-frame:hover {
+  box-shadow:
+    0 0 6px  rgba(0, 229, 212, 1),
+    0 0 18px rgba(0, 229, 212, 0.85),
+    0 0 40px rgba(0, 229, 212, 0.55),
+    0 0 80px rgba(0, 229, 212, 0.25),
+    inset 0 0 6px rgba(0, 229, 212, 0.15);
+}
+
+/* Resting state: same pink as the kanji, slightly dimmed */
+.home__coming-soon-text {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 900;
+  color: var(--color-pink);
+  opacity: 0.58;
+  cursor: default;
+  transition: opacity 0.35s ease, text-shadow 0.35s ease;
+}
+
+/* Hover: full neon glow — identical layers to .home__dish-kanji on image hover */
+.home__coming-soon-text:hover {
+  opacity: 1;
+  text-shadow:
+    0 0 6px  rgba(255, 31, 122, 1),
+    0 0 18px rgba(255, 31, 122, 0.85),
+    0 0 40px rgba(255, 31, 122, 0.55),
+    0 0 80px rgba(255, 31, 122, 0.25);
+}
+
 /* ---------- Description ---------- */
 
 .home__description {
@@ -1036,6 +1096,17 @@ body {
     bottom: 0;
     transform: translate(-50%, 20%) rotate(12deg);
     font-size: clamp(4.75rem, 14vw, 8rem);
+  }
+
+  /* On mobile the grid collapses, so ComingSoon just fills the full width */
+  .home__coming-soon {
+    grid-column: auto;
+    width: 100%;
+    min-height: 12rem;
+  }
+
+  .home__coming-soon-text {
+    font-size: clamp(2rem, 8vw, 4rem);
   }
 
   .home__description {

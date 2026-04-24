@@ -5,6 +5,7 @@ import { MENU } from '@/data/menuData';
 import KumoMenu from '@/components/KumoMenu';
 import KumoDish from '@/components/KumoDish';
 import MenuHeader from '@/components/MenuHeader';
+import ComingSoon from '@/components/ComingSoon';
 
 const DEFAULT_CATEGORY = 'small plates';
 const DEFAULT_DISH = MENU[DEFAULT_CATEGORY][0];
@@ -28,7 +29,8 @@ export default function MenuSection() {
           onSelectDish={setSelectedDish}
           onCategoryChange={handleCategoryChange}
         />
-        <KumoDish {...selectedDish} />
+        {/* Show the coming soon placeholder for drinks, dish card for everything else */}
+        {activeCategory === 'drinks' ? <ComingSoon /> : <KumoDish {...selectedDish} />}
       </div>
     </>
   );
