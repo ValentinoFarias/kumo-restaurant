@@ -11,13 +11,13 @@
 import { useState } from 'react';
 import { MENU } from '@/data/menuData';
 
-export default function KumoMenu({ selectedDishId, onSelectDish }) {
-  // Tracks which category accordion is open; null = all collapsed
+export default function KumoMenu({ selectedDishId, onSelectDish, onCategoryChange }) {
   const [openCategory, setOpenCategory] = useState(null);
 
-  // Toggle category open/closed — clicking an already-open one closes it
   function handleCategoryClick(category) {
-    setOpenCategory(openCategory === category ? null : category);
+    const willOpen = openCategory !== category;
+    setOpenCategory(willOpen ? category : null);
+    if (willOpen) onCategoryChange(category);
   }
 
   return (

@@ -1,34 +1,35 @@
-/*
- * MenuSection — client wrapper that connects KumoMenu and KumoDish.
- *
- * Owns the selectedDish state so that clicking a plate name in the accordion
- * updates what KumoDish renders, without either child needing to know about
- * the other.
- */
-
 'use client';
 
 import { useState } from 'react';
 import { MENU } from '@/data/menuData';
 import KumoMenu from '@/components/KumoMenu';
 import KumoDish from '@/components/KumoDish';
+import MenuHeader from '@/components/MenuHeader';
 
-// Default to the first dish in small plates so the page never loads empty
-const DEFAULT_DISH = MENU['small plates'][0];
+const DEFAULT_CATEGORY = 'small plates';
+const DEFAULT_DISH = MENU[DEFAULT_CATEGORY][0];
 
 export default function MenuSection() {
+  const [activeCategory, setActiveCategory] = useState(DEFAULT_CATEGORY);
   const [selectedDish, setSelectedDish] = useState(DEFAULT_DISH);
 
-  return (
-    <div className="home__menu-block">
-      {/* Accordion nav — calls setSelectedDish when a plate is clicked */}
-      <KumoMenu
-        selectedDishId={selectedDish.id}
-        onSelectDish={setSelectedDish}
-      />
+  function handleCategoryChange(category) {
+    setActiveCategory(category);
+    const first = MENU[category]?.[0];
+    if (first) setSelectedDish(first);
+  }
 
-      {/* Dish card — re-renders whenever selectedDish changes */}
-      <KumoDish {...selectedDish} />
-    </div>
+  return (
+    <>
+      <MenuHeader category={activeCategory} />
+      <div className="home__menu-block">
+        <KumoMenu
+          selectedDishId={selectedDish.id}
+          onSelectDish={setSelectedDish}
+          onCategoryChange={handleCategoryChange}
+        />
+        <KumoDish {...selectedDish} />
+      </div>
+    </>
   );
 }

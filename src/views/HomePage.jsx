@@ -1,6 +1,5 @@
 import KumoFooter from "../components/KumoFooter";
 import HeroVideo from "../components/HeroVideo";
-import MenuHeader from "../components/MenuHeader";
 import NavBar from "../components/NavBar";
 import MenuSection from "../components/MenuSection";
 
@@ -19,10 +18,7 @@ export default function HomePage() {
 
       <div className="home__canvas-shell">
         <div className="home__canvas">
-          {/* Menu header — scroll target for the navbar "menu" link */}
-          <MenuHeader />
-
-          {/* Accordion nav + dish card, connected via shared state */}
+          {/* MenuSection renders MenuHeader + accordion nav + dish card */}
           <MenuSection />
 
           {/* Footer — contact columns + big brand row */}
@@ -30,5 +26,5 @@ export default function HomePage() {
         </div>
       </div>
     </div>
-  );
+  );m
 }
