@@ -1,8 +1,8 @@
 const CATEGORY_META = {
   'small plates': { kanji: 'お つ ま み', en: 'small plates' },
-  'brooths':      { kanji: 'ら ー め ん', en: 'brooths'      },
+  'broths':       { kanji: 'ら ー め ん', en: 'broths'       },
   'sides':        { kanji: '付 け 合 わ せ', en: 'sides'      },
-  'deserts':      { kanji: 'デ ザ ー ト',  en: 'deserts'     },
+  'desserts':     { kanji: 'デ ザ ー ト',  en: 'desserts'    },
   'drinks':       { kanji: 'お 飲 み 物',  en: 'drinks'      },
 };
 

@@ -7,7 +7,7 @@
 export default function SectionDivider() {
   return (
     <img
-      src="/assets/images/divider.svg"
+      src="/assets/images/divider-right.svg"
       alt=""
       aria-hidden="true"
       style={{ display: "block", width: "100%", height: "auto" }}

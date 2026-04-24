@@ -7,7 +7,7 @@ export default function NavBar({ page = "book" }) {
           <p className="home__navbar-menu-jp">メニュー</p>
         </div>
 
-        <a className="home__navbar-logo-link" href="/home">
+        <a className="home__navbar-logo-link" href="#footer">
           <img
             className="home__navbar-logo"
             src="/assets/images/logoKumo.png"

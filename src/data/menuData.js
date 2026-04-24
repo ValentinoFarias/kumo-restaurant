@@ -75,7 +75,7 @@ export const MENU = {
 
   /* ────────────────────────────── BROOTHS ────────────────────────────── */
 
-  'brooths': [
+  'broths': [
     {
       id: 'tonkotsu',
       imageSrc:   '/assets/images/Menu/the-brooths/tonkotsu.webp',
@@ -205,7 +205,7 @@ export const MENU = {
 
   /* ─────────────────────────────── DESERTS ───────────────────────────── */
 
-  'deserts': [
+  'desserts': [
     {
       id: 'matcha-chocolate-fondant',
       imageSrc:   '/assets/images/Menu/dessert/matcha-chocolate-fondant.webp',

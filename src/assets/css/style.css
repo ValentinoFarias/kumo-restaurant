@@ -191,8 +191,8 @@ body {
 .home__hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(210, 50, 50, 0.35);
-  opacity: 0.25;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0.90;
   z-index: 1;
 }
 
@@ -224,7 +224,7 @@ body {
 
 .home__hero-title-en {
   position: absolute;
-  top: 43%;
+  top: 40%;
   left: 50%;
   z-index: 3;
   transform: translate(-50%, -50%);
@@ -232,6 +232,16 @@ body {
   color: var(--color-cream);
   font-weight: 400;
   white-space: nowrap;
+  cursor: default;
+  transition: text-shadow 0.35s ease;
+}
+
+/* White neon glow on hover — same 3-layer pattern as the section divider */
+.home__hero-title-en:hover {
+  text-shadow:
+    0 0 4px  rgba(255, 255, 255, 1),
+    0 0 12px rgba(255, 255, 255, 0.7),
+    0 0 28px rgba(255, 255, 255, 0.35);
 }
 
 .home__hero-title-jp {
@@ -251,13 +261,13 @@ body {
 
 .home__menu-header {
   position: absolute;
-  top: 22px;
+  top: 50px;
   left: 50%;
   display: grid;
   place-items: center;
   transform: translateX(-50%);
   padding: 0 1.5rem;
-  scroll-margin-top: 7rem;
+  scroll-margin-top: 0;
   text-align: center;
 }
 

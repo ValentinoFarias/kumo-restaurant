@@ -1,9 +1,9 @@
 export default function KumoFooter() {
   return (
-    <footer className="home__footer">
+    <footer id="footer" className="home__footer">
       <div className="home__footer-contact">
         <div className="home__footer-col">
-          <p className="home__footer-col-heading">restaurant</p>
+          <p className="home__footer-col-heading">address</p>
           <div className="home__footer-col-body">
             <p>3 frederick place</p>
             <p>bs8 1as</p>
