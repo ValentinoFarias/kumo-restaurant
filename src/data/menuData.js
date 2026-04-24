@@ -79,7 +79,7 @@ export const MENU = {
     {
       id: 'tonkotsu',
       imageSrc:   '/assets/images/Menu/the-brooths/tonkotsu.webp',
-      cartoonSrc: null,
+      cartoonSrc: '/assets/images/Menu/the-brooths/tonkotsuCartoon.webp',
       imageAlt:   'Tonkotsu',
       kanji:      '豚骨',
       name:       'tonkotsu',
@@ -94,7 +94,7 @@ export const MENU = {
     {
       id: 'truffle-shio',
       imageSrc:   '/assets/images/Menu/the-brooths/truffle-shio.webp',
-      cartoonSrc: null,
+      cartoonSrc: '/assets/images/Menu/the-brooths/truffle-shioCartoon.webp',
       imageAlt:   'Truffle Shio',
       kanji:      '塩拉麺',
       name:       'truffle shio',
@@ -109,7 +109,7 @@ export const MENU = {
     {
       id: 'spiced-tantanmen',
       imageSrc:   '/assets/images/Menu/the-brooths/spiced-tantanmen.webp',
-      cartoonSrc: null,
+      cartoonSrc: '/assets/images/Menu/the-brooths/spiced-tantanmenCartoon.webp',
       imageAlt:   'Spiced Tantanmen',
       kanji:      '担々麺',
       name:       'spiced tantanmen',
@@ -124,7 +124,7 @@ export const MENU = {
     {
       id: 'kombu-shojin',
       imageSrc:   '/assets/images/Menu/the-brooths/kombu-shojin.webp',
-      cartoonSrc: null,
+      cartoonSrc: '/assets/images/Menu/the-brooths/kombu-shojinCartoon.webp',
       imageAlt:   'Kombu Shojin',
       kanji:      '昆布精進',
       name:       'kombu shojin',
@@ -144,7 +144,7 @@ export const MENU = {
     {
       id: 'chashu',
       imageSrc:   '/assets/images/Menu/sides/chashu.webp',
-      cartoonSrc: null,
+      cartoonSrc: '/assets/images/Menu/sides/chashuCartoon.webp',
       imageAlt:   'Chashu',
       kanji:      '叉焼',
       name:       'chashu',
@@ -159,7 +159,7 @@ export const MENU = {
     {
       id: 'marinated-eggs',
       imageSrc:   '/assets/images/Menu/sides/marinated-eggs.webp',
-      cartoonSrc: null,
+      cartoonSrc: '/assets/images/Menu/sides/marinated-eggsCartoon.webp',
       imageAlt:   'Marinated Eggs',
       kanji:      '味玉',
       name:       'marinated eggs',
@@ -174,7 +174,7 @@ export const MENU = {
     {
       id: 'noodles',
       imageSrc:   '/assets/images/Menu/sides/noodles.webp',
-      cartoonSrc: null,
+      cartoonSrc: '/assets/images/Menu/sides/noodlesCartoon.webp',
       imageAlt:   'Noodles',
       kanji:      '麺',
       name:       'noodles',
@@ -189,7 +189,7 @@ export const MENU = {
     {
       id: 'truffle-rice-furikake',
       imageSrc:   '/assets/images/Menu/sides/truffle-rice-furikake.webp',
-      cartoonSrc: null,
+      cartoonSrc: '/assets/images/Menu/sides/truffle-rice-furikakeCartoon.webp',
       imageAlt:   'Truffle Rice Furikake',
       kanji:      'ふりかけ',
       name:       'truffle rice furikake',
@@ -209,7 +209,7 @@ export const MENU = {
     {
       id: 'matcha-chocolate-fondant',
       imageSrc:   '/assets/images/Menu/dessert/matcha-chocolate-fondant.webp',
-      cartoonSrc: null,
+      cartoonSrc: '/assets/images/Menu/dessert/matcha-chocolate-fondantCartoon.webp',
       imageAlt:   'Matcha Chocolate Fondant',
       kanji:      '抹茶',
       name:       'matcha chocolate fondant',
@@ -224,7 +224,7 @@ export const MENU = {
     {
       id: 'miso-caramel-ice-cream',
       imageSrc:   '/assets/images/Menu/dessert/miso-caramel-ice-cream.webp',
-      cartoonSrc: null,
+      cartoonSrc: '/assets/images/Menu/dessert/miso-caramel-ice-creamCartoon.webp',
       imageAlt:   'Miso Caramel Ice Cream',
       kanji:      '味噌',
       name:       'miso caramel ice cream',
