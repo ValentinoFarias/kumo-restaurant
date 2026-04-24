@@ -68,7 +68,7 @@ body {
   background: var(--color-bg);
   overflow-x: hidden;
   --home-canvas-width: 1440px;
-  --home-canvas-height: 1978px;
+  --home-canvas-height: 1736px;
   --home-canvas-scale: min(1, calc(100vw / 1440px));
 }
 
@@ -287,6 +287,22 @@ body {
   color: var(--color-off-white);
   font-weight: 900;
   white-space: nowrap;
+}
+
+/* ---------- Section Divider (SectionDivider.jsx) ---------- */
+
+/* Glow effect on the divider SVG — drop-shadow follows the actual path shapes */
+.home__section-divider {
+  cursor: default;
+  transition: filter 0.35s ease;
+}
+
+/* White neon glow on hover — three layers for tight edge, mid spread, wide halo */
+.home__section-divider:hover {
+  filter:
+    drop-shadow(0 0 4px  rgba(255, 255, 255, 1))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.7))
+    drop-shadow(0 0 28px rgba(255, 255, 255, 0.35));
 }
 
 /* ---------- Menu block wrapper (menu nav + dish + description) ---------- */
@@ -551,7 +567,7 @@ body {
 /* Flex column — stacks the contact row and logo row vertically */
 .home__footer {
   position: absolute;
-  top: 1080px;
+  top: 1050px;
   left: 0;
   width: 100%;
   height: 686px;
@@ -563,7 +579,7 @@ body {
 
 /* Contact columns row — margin replaces the old absolute top/left values */
 .home__footer-contact {
-  margin-top: 119px;  /* was: position: absolute; top: 119px */
+  margin-top: 0px;  /* was: position: absolute; top: 119px */
   margin-left: 450px; /* was: left: 450px */
   display: flex;
   gap: 115px;
