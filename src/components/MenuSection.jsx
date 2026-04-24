@@ -29,9 +29,12 @@ export default function MenuSection() {
           onSelectDish={setSelectedDish}
           onCategoryChange={handleCategoryChange}
         />
-        {/* Show the coming soon placeholder for drinks, dish card for everything else */}
-        {activeCategory === 'drinks' ? <ComingSoon /> : <KumoDish {...selectedDish} />}
+        {/* Only render KumoDish when not on drinks */}
+        {activeCategory !== 'drinks' && <KumoDish {...selectedDish} />}
       </div>
+
+      {/* Rendered outside the grid so it can be centered like MenuHeader */}
+      {activeCategory === 'drinks' && <ComingSoon />}
     </>
   );
 }

@@ -485,12 +485,15 @@ body {
 /* ---------- Coming Soon (ComingSoon.jsx) ---------- */
 
 /* Spans both the dish and description grid columns so it fills the full right side */
+/* Positioned like MenuHeader — centered on the canvas */
 .home__coming-soon {
-  grid-column: 2 / 4;
+  position: absolute;
+  top: clamp(20rem, 35svh, 26rem);
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 20rem;
 }
 
 /* Teal neon border frame — square corners, soft resting glow */
@@ -529,6 +532,7 @@ body {
   color: var(--color-pink);
   opacity: 0.58;
   cursor: default;
+  white-space: nowrap;
   transition: opacity 0.35s ease, text-shadow 0.35s ease;
 }
 
