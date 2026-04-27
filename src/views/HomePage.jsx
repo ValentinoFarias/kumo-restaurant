@@ -23,7 +23,7 @@ export default function HomePage() {
 
           {/* Decorative divider between the menu and the footer */}
           <img
-            src="/assets/images/divider2.svg"
+            src="/assets/images/dividerfinal.svg"
             alt=""
             aria-hidden="true"
             loading="lazy"
