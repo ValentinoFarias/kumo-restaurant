@@ -299,15 +299,20 @@ body {
   white-space: nowrap;
 }
 
-/* ---------- Section Divider (SectionDivider.jsx) ---------- */
+/* ---------- Section Divider ---------- */
 
-/* Glow effect on the divider SVG — drop-shadow follows the actual path shapes */
 .home__section-divider {
+  position: absolute;
+  top: 870px;
+  left: 0;
+  width: 1440px;
+  height: auto;
+  display: block;
+  z-index: 1;
   cursor: default;
   transition: filter 0.35s ease;
 }
 
-/* White neon glow on hover — three layers for tight edge, mid spread, wide halo */
 .home__section-divider:hover {
   filter:
     drop-shadow(0 0 4px  rgba(255, 255, 255, 1))
@@ -470,7 +475,7 @@ body {
 .home__dish-kanji {
   position: absolute;
   bottom: 0;
-  left: 200;
+  left: 200px;
   transform: translate(-50%, 20%) rotate(12deg);
   transform-origin: left bottom;
   font-size: clamp(8rem, 12vw, 11rem);
@@ -1323,6 +1328,11 @@ body {
     padding: 1.5rem 0 0;
   }
 
+  /* Hide the 1440px-wide desktop-only decorative divider */
+  .home__section-divider {
+    display: none;
+  }
+
   /* ---------- Menu header ---------- */
   .home__menu-header {
     position: relative;
@@ -1331,19 +1341,22 @@ body {
     align-self: center;
     margin: 0 auto;
     transform: none;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
   .home__menu-header-jp {
-    font-size: clamp(4rem, 14vw, 8rem);
+    font-size: clamp(3.5rem, 13vw, 8rem);
+    white-space: normal;
+    text-align: center;
   }
 
   .home__menu-header-en {
-    font-size: clamp(2.35rem, 8vw, 5.5rem);
+    font-size: clamp(2rem, 7.5vw, 5.5rem);
+    white-space: normal;
+    text-align: center;
   }
 
-  /* ---------- Menu block: menu nav + dish + description ---------- */
-  /* Re-engage the wrapper as a flex column so children stack on mobile */
+  /* ---------- Menu block ---------- */
   .home__menu-block {
     position: relative;
     top: auto;
@@ -1351,18 +1364,66 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    padding: 2.5rem 1.5rem 0;
+    gap: 2rem;
+    padding: 2rem 1.5rem 0;
   }
 
+  /* Accordion nav — full-width list with separator lines */
   .home__menu-nav {
     position: relative;
     top: auto;
     left: auto;
-    gap: 1.5rem;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    gap: 0;
+    font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+    padding-top: 0;
+    border-top: 1px solid rgba(247, 244, 226, 0.1);
   }
 
+  .home__menu-nav-item {
+    border-bottom: 1px solid rgba(247, 244, 226, 0.1);
+  }
+
+  /* Make category buttons full-width tap targets (min 48px) */
+  .home__menu-nav-btn {
+    width: 100%;
+    padding: 0.9rem 0;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* + / − indicator driven by the --open modifier class */
+  .home__menu-nav-btn::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--color-teal);
+    opacity: 0.6;
+    flex-shrink: 0;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .home__menu-nav-btn--open::after {
+    content: '−';
+    opacity: 1;
+  }
+
+  /* Dish items — indented, with a visible left accent and proper touch height */
+  .home__menu-nav-plate {
+    padding: 0.7rem 0 0.7rem 1rem;
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+    border-left: 2px solid rgba(247, 244, 226, 0.12);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .home__menu-nav-plate--active {
+    border-left-color: var(--color-pink);
+  }
+
+  /* ---------- Dish photo ---------- */
   .home__dish {
     position: relative;
     top: auto;
@@ -1379,7 +1440,8 @@ body {
     max-width: 40rem;
     height: auto;
     aspect-ratio: 4 / 3;
-    border-radius: 2.5rem;
+    border-radius: clamp(1.25rem, 4vw, 2.5rem);
+    overflow: hidden;
   }
 
   .home__dish-image {
@@ -1391,34 +1453,38 @@ body {
     top: auto;
   }
 
+  /* Hide the decorative kanji — it overflows on any narrow viewport */
   .home__dish-kanji {
-    display: block;
-    left: 0;
-    bottom: 0;
-    transform: translate(-50%, 20%) rotate(12deg);
-    font-size: clamp(4.75rem, 14vw, 8rem);
+    display: none;
   }
 
-  /* On mobile the grid collapses, so ComingSoon just fills the full width */
+  /* ComingSoon: reset absolute positioning so it sits in the flex column */
   .home__coming-soon {
-    grid-column: auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
     width: 100%;
-    min-height: 12rem;
+    min-height: 10rem;
+    justify-content: center;
   }
 
   .home__coming-soon-text {
-    font-size: clamp(2rem, 8vw, 4rem);
+    font-size: clamp(2rem, 7vw, 4rem);
   }
 
+  /* Description — full width card below the image */
   .home__description {
     position: relative;
     top: auto;
     left: auto;
     width: 100%;
-    max-width: 40rem;
+    max-width: none;
     height: auto;
-    margin: 0 auto;
-    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    padding: 1.25rem 0;
+    white-space: normal;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    border-top: 1px solid rgba(0, 229, 212, 0.15);
   }
 
   /* ---------- Footer ---------- */
@@ -1600,6 +1666,34 @@ body {
     top: auto;
     left: auto;
     font-size: clamp(1rem, 2vw, 1.5rem);
+  }
+}
+
+/* Small phones — tighten spacing and shrink text further. */
+@media (max-width: 480px) {
+  .home__menu-header-jp {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+  }
+
+  .home__menu-header-en {
+    font-size: clamp(1.6rem, 6.5vw, 2.5rem);
+  }
+
+  .home__menu-block {
+    gap: 1.5rem;
+    padding: 1.5rem 1rem 0;
+  }
+
+  .home__menu-nav {
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
+  }
+
+  .home__coming-soon-text {
+    font-size: clamp(1.6rem, 6vw, 2.5rem);
+  }
+
+  .home__description {
+    font-size: clamp(0.875rem, 3.5vw, 1rem);
   }
 }
 

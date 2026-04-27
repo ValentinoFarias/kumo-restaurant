@@ -27,15 +27,6 @@ export default function HomePage() {
             alt=""
             aria-hidden="true"
             className="home__section-divider"
-            style={{
-              position: "absolute",
-              top: "870px",
-              left: "0",
-              width: "1440px",
-              height: "auto",
-              display: "block",
-              zIndex: 1,
-            }}
           />
 
           {/* Footer — contact columns + big brand row */}
