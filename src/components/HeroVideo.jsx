@@ -9,8 +9,9 @@ const HERO_CONFIG = {
   },
 };
 
-export default function HeroVideo({ page = "book" }) {
-  const { prefix, videoSrc } = HERO_CONFIG[page] ?? HERO_CONFIG.book;
+export default function HeroVideo({ page = "book", videoSrc: videoSrcProp }) {
+  const { prefix, videoSrc: configSrc } = HERO_CONFIG[page] ?? HERO_CONFIG.book;
+  const videoSrc = videoSrcProp ?? configSrc;
 
   return (
     <section className={`${prefix}__hero`}>
