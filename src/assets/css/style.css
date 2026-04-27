@@ -1572,19 +1572,22 @@ body {
     position: relative;
     top: auto;
     left: auto;
-    display: flex;
-    justify-content: center;
-    padding: 2rem 1.5rem 0;
+    width: 100%;
+    padding: 2rem 0 0;
   }
 
   .book__heading-jp {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+    font-size: clamp(4rem, 15vw, 10rem);
   }
 
   .book__heading-en {
     position: relative;
     top: auto;
     left: auto;
+    width: 100%;
     font-size: clamp(2.5rem, 8vw, 8rem);
     text-align: center;
   }
