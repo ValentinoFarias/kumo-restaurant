@@ -12,7 +12,7 @@ export default function NavBar({ page = "book" }) {
         <a className="home__navbar-logo-link" href="#footer">
           <Image
             className="home__navbar-logo"
-            src="/assets/images/logoKumo.png"
+            src="/assets/images/LogoSVGKumo.svg"
             alt="Kumo Ramen"
             width={66}
             height={72}
@@ -38,7 +38,7 @@ export default function NavBar({ page = "book" }) {
       <a className="home__navbar-logo-link" href="/">
         <Image
           className="home__navbar-logo"
-          src="/assets/images/logoKumo.png"
+          src="/assets/images/LogoSVGKumo.svg"
           alt="Kumo Ramen"
           width={66}
           height={72}

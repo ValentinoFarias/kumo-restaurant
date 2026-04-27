@@ -1,6 +1,6 @@
 # Kumo Ramen Website
 
-Kumo Ramen Website is a frontend-focused Next.js project for a ramen restaurant in Bristol.
+Kumo Ramen Website is a portfolio frontend-focused Next.js project for a imaginary ramen restaurant in Bristol.
 It presents a cinematic home experience with a data-driven menu explorer and a booking flow where guests can pick date, party size, and time.
 
 <!-- screenshot: responsive hero section with neon frame, navbar, and background video -->
