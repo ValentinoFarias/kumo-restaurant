@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function KumoFooter() {
   return (
     <footer id="footer" className="home__footer">
@@ -29,10 +31,12 @@ export default function KumoFooter() {
       </div>
 
       <div className="home__footer-logo-wrap">
-        <img
+        <Image
           className="home__footer-logo"
           src="/assets/images/logoKumoFoot.png"
           alt="Kumo Ramen"
+          width={309}
+          height={338}
         />
         <p className="home__footer-brand-jp">雲ラーメン</p>
         <p className="home__footer-brand-en">kumo ramen</p>

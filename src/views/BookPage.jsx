@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import HeroVideo from "../components/HeroVideo";
 import NavBar from "../components/NavBar";
 
@@ -87,10 +88,10 @@ export default function BookPage() {
                 <span className="book__cal-month">{MONTH_NAMES[month]} {year}</span>
                 <div className="book__cal-nav">
                   <button className="book__cal-btn" onClick={prevMonth} aria-label="Previous month">
-                    <img src="/assets/images/chevron-left.png" alt="" className="book__cal-chevron" />
+                    <Image src="/assets/images/chevron-left.png" alt="" className="book__cal-chevron" width={24} height={24} />
                   </button>
                   <button className="book__cal-btn" onClick={nextMonth} aria-label="Next month">
-                    <img src="/assets/images/chevron-right.png" alt="" className="book__cal-chevron" />
+                    <Image src="/assets/images/chevron-right.png" alt="" className="book__cal-chevron" width={24} height={24} />
                   </button>
                 </div>
               </div>
@@ -293,10 +294,12 @@ export default function BookPage() {
             </div>
 
             <div className="book__footer-logo-wrap">
-              <img
+              <Image
                 className="book__footer-logo"
                 src="/assets/images/logoKumoFoot.png"
                 alt="Kumo Ramen"
+                width={309}
+                height={338}
               />
               <p className="book__footer-brand-jp">雲ラーメン</p>
               <p className="book__footer-brand-en">kumo ramen</p>

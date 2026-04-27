@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function KumoDish({
   imageSrc = "/assets/images/chawanmushi.png",
   // Cartoon version shown on hover — sits on top of the real image
@@ -17,17 +19,21 @@ export default function KumoDish({
       <div className="home__dish">
         <div className="home__dish-image-wrap">
           {/* Real photo — always visible */}
-          <img
+          <Image
+            fill
             className="home__dish-image"
             src={imageSrc}
             alt={imageAlt}
+            sizes="(max-width: 1100px) 90vw, 40vw"
           />
           {/* Cartoon — stacked on top, fades in on hover via CSS */}
-          <img
+          <Image
+            fill
             className="home__dish-image home__dish-image--cartoon"
             src={cartoonSrc}
-            alt={imageAlt}
+            alt=""
             aria-hidden="true"
+            sizes="(max-width: 1100px) 90vw, 40vw"
           />
         </div>
         <p className="home__dish-kanji">{kanji}</p>

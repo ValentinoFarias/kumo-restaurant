@@ -26,6 +26,7 @@ export default function HomePage() {
             src="/assets/images/divider2.svg"
             alt=""
             aria-hidden="true"
+            loading="lazy"
             className="home__section-divider"
           />
 

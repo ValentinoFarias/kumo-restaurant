@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function NavBar({ page = "book" }) {
   if (page === "home") {
     return (
@@ -8,10 +10,13 @@ export default function NavBar({ page = "book" }) {
         </div>
 
         <a className="home__navbar-logo-link" href="#footer">
-          <img
+          <Image
             className="home__navbar-logo"
             src="/assets/images/logoKumo.png"
             alt="Kumo Ramen"
+            width={66}
+            height={72}
+            priority
           />
         </a>
 
@@ -31,10 +36,13 @@ export default function NavBar({ page = "book" }) {
       </div>
 
       <a className="home__navbar-logo-link" href="/">
-        <img
+        <Image
           className="home__navbar-logo"
           src="/assets/images/logoKumo.png"
           alt="Kumo Ramen"
+          width={66}
+          height={72}
+          priority
         />
       </a>
 
