@@ -9,12 +9,13 @@
 
 import { RootPage, generatePageMetadata } from '@payloadcms/next/views'
 import { importMap } from '../importMap'
+import config from '@payload-config'
 
 // Genera los meta tags (título, etc.) de cada página del admin
 export const generateMetadata = ({ params, searchParams }: any) =>
-  generatePageMetadata({ params, searchParams, importMap })
+  generatePageMetadata({ config, params, searchParams, importMap })
 
 // Renderiza la UI del admin panel de Payload
 export default function Page({ params, searchParams }: any) {
-  return RootPage({ params, searchParams, importMap })
+  return RootPage({ config, params, searchParams, importMap })
 }

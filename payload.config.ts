@@ -22,6 +22,8 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  secret: process.env.PAYLOAD_SECRET || '',
+
   // El admin panel va a estar en /admin
   admin: {
     user: 'users',

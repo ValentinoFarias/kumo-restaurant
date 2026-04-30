@@ -7,8 +7,9 @@
 
 import { NotFoundPage } from '@payloadcms/next/views'
 import { importMap } from '../importMap'
+import config from '@payload-config'
 
 // Renderiza la página 404 del admin de Payload
 export default function NotFound() {
-  return NotFoundPage({ importMap })
+  return NotFoundPage({ config, importMap })
 }
