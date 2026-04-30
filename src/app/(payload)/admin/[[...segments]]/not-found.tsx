@@ -11,5 +11,10 @@ import config from '@payload-config'
 
 // Renderiza la página 404 del admin de Payload
 export default function NotFound() {
-  return NotFoundPage({ config, importMap })
+  return NotFoundPage({
+    config,
+    importMap,
+    params: Promise.resolve({ segments: [] }),
+    searchParams: Promise.resolve({}),
+  })
 }
