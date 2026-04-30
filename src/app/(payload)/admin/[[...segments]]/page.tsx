@@ -13,7 +13,7 @@ import config from '@payload-config'
 
 // Genera los meta tags (título, etc.) de cada página del admin
 export const generateMetadata = ({ params, searchParams }: any) =>
-  generatePageMetadata({ config, params, searchParams, importMap })
+  generatePageMetadata({ config, params, searchParams })
 
 // Renderiza la UI del admin panel de Payload
 export default function Page({ params, searchParams }: any) {
