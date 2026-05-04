@@ -40,6 +40,7 @@ export default buildConfig({
         media: true,
       },
       bucket: process.env.CLOUDFLARE_R2_BUCKET || '',
+      baseURL: process.env.CLOUDFLARE_R2_PUBLIC_URL || '',
       config: {
         endpoint: `https://${process.env.CLOUDFLARE_R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
         region: 'auto',
