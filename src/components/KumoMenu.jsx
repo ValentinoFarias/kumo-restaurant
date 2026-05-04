@@ -9,9 +9,8 @@
 'use client';
 
 import { useState } from 'react';
-import { MENU } from '@/data/menuData';
 
-export default function KumoMenu({ selectedDishId, onSelectDish, onCategoryChange }) {
+export default function KumoMenu({ menu, selectedDishId, onSelectDish, onCategoryChange }) {
   const [openCategory, setOpenCategory] = useState(null);
 
   function handleCategoryClick(category) {
@@ -22,7 +21,7 @@ export default function KumoMenu({ selectedDishId, onSelectDish, onCategoryChang
 
   return (
     <nav className="home__menu-nav">
-      {Object.entries(MENU).map(([category, dishes]) => {
+      {Object.entries(menu).map(([category, dishes]) => {
         const isOpen = openCategory === category;
 
         return (

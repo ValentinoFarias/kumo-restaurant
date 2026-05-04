@@ -10,7 +10,7 @@ import MenuSection from "../components/MenuSection";
  * and KumoDish internally, so this page stays a server component.
  */
 
-export default function HomePage() {
+export default function HomePage({ menu }) {
   return (
     <div className="home">
       <HeroVideo page="home" />
@@ -19,7 +19,7 @@ export default function HomePage() {
       <div className="home__canvas-shell">
         <div className="home__canvas">
           {/* MenuSection renders MenuHeader + accordion nav + dish card */}
-          <MenuSection />
+          <MenuSection menu={menu} />
 
           {/* Decorative divider between the menu and the footer */}
           <img
