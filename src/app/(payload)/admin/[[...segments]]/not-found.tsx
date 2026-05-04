@@ -1,20 +1,24 @@
-/*
- * not-found.tsx — Página 404 personalizada para el admin de Payload.
- *
- * Se muestra cuando el usuario navega a una ruta inexistente dentro del admin.
- * No toques este archivo — Payload lo maneja automáticamente.
- */
+/* THIS FILE WAS GENERATED AUTOMATICALLY BY PAYLOAD. */
+/* DO NOT MODIFY IT BECAUSE IT COULD BE REWRITTEN AT ANY TIME. */
+import type { Metadata } from 'next'
 
-import { NotFoundPage } from '@payloadcms/next/views'
-import { importMap } from '../importMap'
 import config from '@payload-config'
+import { NotFoundPage, generatePageMetadata } from '@payloadcms/next/views'
+import { importMap } from '../importMap'
 
-// Renderiza la página 404 del admin de Payload
-export default function NotFound() {
-  return NotFoundPage({
-    config,
-    importMap,
-    params: Promise.resolve({ segments: [] }),
-    searchParams: Promise.resolve({}),
-  })
+type Args = {
+  params: Promise<{
+    segments: string[]
+  }>
+  searchParams: Promise<{
+    [key: string]: string | string[]
+  }>
 }
+
+export const generateMetadata = ({ params, searchParams }: Args): Promise<Metadata> =>
+  generatePageMetadata({ config, params, searchParams })
+
+const NotFound = ({ params, searchParams }: Args) =>
+  NotFoundPage({ config, params, searchParams, importMap })
+
+export default NotFound

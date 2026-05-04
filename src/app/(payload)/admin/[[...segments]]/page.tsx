@@ -1,21 +1,24 @@
-/*
- * page.tsx — Página principal del admin panel de Payload CMS.
- *
- * Esta ruta captura TODAS las sub-rutas del admin (/admin, /admin/collections, etc.)
- * gracias al parámetro [[...segments]] (segmentos opcionales).
- *
- * No toques este archivo — Payload lo maneja automáticamente.
- */
+/* THIS FILE WAS GENERATED AUTOMATICALLY BY PAYLOAD. */
+/* DO NOT MODIFY IT BECAUSE IT COULD BE REWRITTEN AT ANY TIME. */
+import type { Metadata } from 'next'
 
+import config from '@payload-config'
 import { RootPage, generatePageMetadata } from '@payloadcms/next/views'
 import { importMap } from '../importMap'
-import config from '@payload-config'
 
-// Genera los meta tags (título, etc.) de cada página del admin
-export const generateMetadata = ({ params, searchParams }: any) =>
+type Args = {
+  params: Promise<{
+    segments: string[]
+  }>
+  searchParams: Promise<{
+    [key: string]: string | string[]
+  }>
+}
+
+export const generateMetadata = ({ params, searchParams }: Args): Promise<Metadata> =>
   generatePageMetadata({ config, params, searchParams })
 
-// Renderiza la UI del admin panel de Payload
-export default function Page({ params, searchParams }: any) {
-  return RootPage({ config, params, searchParams, importMap })
-}
+const Page = ({ params, searchParams }: Args) =>
+  RootPage({ config, params, searchParams, importMap })
+
+export default Page
