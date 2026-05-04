@@ -2,6 +2,8 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import HomePage from '@/views/HomePage'
 
+export const dynamic = 'force-dynamic'
+
 const SLUG_TO_LABEL = {
   'small-plates': 'small plates',
   broths:         'broths',

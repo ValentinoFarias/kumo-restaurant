@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(vercel --version)",
+      "Bash(vercel project *)",
+      "Bash(vercel logs *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://kumo-restaurant-7km8kpuen-valentinofarias-projects.vercel.app/admin\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://www.kumoramen.koykodesign.com/admin\")",
+      "Bash(vercel domains *)"
+    ]
+  }
+}
