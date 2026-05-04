@@ -1,4 +1,5 @@
 import { postgresAdapter } from "@payloadcms/db-postgres";
+import { s3Storage } from "@payloadcms/storage-s3";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import path from "path";
 import { buildConfig } from "payload";
@@ -14,6 +15,7 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || '',
   admin: {
     user: Users.slug,
     importMap: {
@@ -32,5 +34,20 @@ export default buildConfig({
     },
   }),
   sharp,
-  plugins: [],
+  plugins: [
+    s3Storage({
+      collections: {
+        media: true,
+      },
+      bucket: process.env.CLOUDFLARE_R2_BUCKET || '',
+      config: {
+        endpoint: `https://${process.env.CLOUDFLARE_R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+        region: 'auto',
+        credentials: {
+          accessKeyId: process.env.CLOUDFLARE_R2_ACCESS_KEY || '',
+          secretAccessKey: process.env.CLOUDFLARE_R2_SECRET_KEY || '',
+        },
+      },
+    }),
+  ],
 });
