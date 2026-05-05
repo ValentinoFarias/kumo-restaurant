@@ -30,7 +30,7 @@ export default function MenuSection({ menu }) {
           onCategoryChange={handleCategoryChange}
         />
         {/* Only render KumoDish when not on drinks */}
-        {activeCategory !== 'drinks' && <KumoDish {...selectedDish} />}
+        {activeCategory !== 'drinks' && <KumoDish key={selectedDish.id} {...selectedDish} />}
       </div>
 
       {/* Rendered outside the grid so it can be centered like MenuHeader */}
