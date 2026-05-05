@@ -37,7 +37,12 @@ export default buildConfig({
   plugins: [
     s3Storage({
       collections: {
-        media: true,
+        media: {
+          // Store the public R2 URL directly — no Payload proxy needed
+          disablePayloadAccessControl: true,
+          generateFileURL: ({ filename }) =>
+            `${process.env.CLOUDFLARE_R2_PUBLIC_URL}/${filename}`,
+        },
       },
       bucket: process.env.CLOUDFLARE_R2_BUCKET || '',
       baseURL: process.env.CLOUDFLARE_R2_PUBLIC_URL || '',
